@@ -1,0 +1,6 @@
+[submodule "core"]
+	path = core
+	url = git@github.com:BlockMind-AI/core.git
+[submodule "backend"]
+	path = backend
+	url = git@github.com:BlockMind-AI/backend.git
