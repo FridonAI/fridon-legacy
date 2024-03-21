@@ -1,6 +1,6 @@
 [submodule "core"]
 	path = core
-	url = git@github:FridonAI/core.git
+	url = git@github.com:FridonAI/core.git
 [submodule "backend"]
 	path = backend
-	url = git@github:FridonAI/backend.git
+	url = git@github.com:FridonAI/backend.git
