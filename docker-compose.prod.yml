@@ -1,18 +1,25 @@
-version: '3.8'
+version: "3.8"
 services:
   api:
-    image: ghcr.io/fridonai/backend-api:main
+    image: ghcr.io/fridonai/api:main
     restart: always
     ports:
-      - '3000:80'
-    depends_on:
-      - db
-      - redis
+      - "80:3000"
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=api_schema
-  
+
+  core:
+    image: ghcr.io/fridonai/core:main
+    container_name: core
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=core_schema
+      - OPENAI_API_KEY=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
+    command: python -m app.main
+
   db:
     image: postgres:16-alpine
     ports:
