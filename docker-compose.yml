@@ -27,8 +27,7 @@ services:
       - OPENAI_API_KEY=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
       - API_URL=http://api:3000
     command: python -u -m app.main
-    volumes:
-      - "./core/data:/app/data"
+
   
   db:
     image: postgres:latest
