@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  api:
+    image: ghcr.io/fridonai/backend-api:main
+    restart: always
+    ports:
+      - '3000:80'
+    depends_on:
+      - db
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=api_schema
+  
+  db:
+    image: postgres:16-alpine
+    ports:
+      - 5432:5432
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: app
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - 6379:6379
