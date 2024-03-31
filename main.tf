@@ -39,7 +39,7 @@ resource "aws_security_group" "allow_web" {
   }
 }
 
-resource "aws_eip" "lb" {
+resource "aws_eip" "eip" {
   instance = aws_instance.fridon-instance.id
   domain   = "vpc"
 }
