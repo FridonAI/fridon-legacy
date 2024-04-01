@@ -46,7 +46,7 @@ resource "aws_eip" "eip" {
 
 resource "aws_instance" "fridon-instance" {
   ami           = data.aws_ami.amzn-linux-2023-ami.id
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
 
   security_groups = [aws_security_group.allow_web.name]
 

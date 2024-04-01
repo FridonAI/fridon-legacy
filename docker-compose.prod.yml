@@ -17,8 +17,19 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=core_schema
+      - POSTGRES_DB_URL=postgresql://user:pass@db:5432/app
       - OPENAI_API_KEY=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
       - API_URL=http://api:3000
+      - LANGCHAIN_TRACING_V2=true
+      - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
+      - LANGCHAIN_API_KEY=ls__69a4a95103294035bd82ad3aa61566f3
+      - LANGCHAIN_PROJECT=fridon-ai
+      # Todo: delete
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=app
+      - POSTGRES_PORT=5432
     command: python -u -m app.main
 
   db:
