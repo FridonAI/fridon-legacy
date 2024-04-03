@@ -44,6 +44,24 @@ resource "aws_eip" "eip" {
   domain   = "vpc"
 }
 
+resource "aws_ebs_volume" "fridon-volume" {
+  availability_zone = aws_instance.fridon-instance.availability_zone
+  size              = 40
+
+  tags = {
+    Name = "Fridon-Volume"
+  }
+}
+
+resource "aws_volume_attachment" "example_attachment" {
+  device_name = "/dev/sdh" # The device name may vary based on the OS
+  volume_id   = aws_ebs_volume.fridon-volume.id
+  instance_id = aws_instance.fridon-instance.id
+
+  # Forces detachment of the volume before destroying, allowing Terraform to manage the volume's lifecycle
+  force_detach = true
+}
+
 resource "aws_instance" "fridon-instance" {
   ami           = data.aws_ami.amzn-linux-2023-ami.id
   instance_type = "t2.medium"
