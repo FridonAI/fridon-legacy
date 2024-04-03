@@ -43,9 +43,6 @@ services:
     restart: always
     ports:
       - 5432:5432
-    volumes:
-      - ./core/init_pgvector.sql:/docker-entrypoint-initdb.d/init_pgvector.sql
-      - ./.database:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
