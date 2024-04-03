@@ -24,6 +24,9 @@ services:
       - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
       - LANGCHAIN_API_KEY=ls__69a4a95103294035bd82ad3aa61566f3
       - LANGCHAIN_PROJECT=fridon-ai
+      - GPT_MODEL=gpt-4-0125-preview
+      - BIRDEYE_API_KEY="9f0fc8d9eb0f42758e36ea3f71bec8d6"
+      - PINECONE_API_KEY="2624d610-9ebc-43e6-95f1-81513475a096"
       # Todo: delete
       - POSTGRES_HOST=db
       - POSTGRES_USER=user
