@@ -54,7 +54,7 @@ resource "aws_instance" "fridon-instance" {
               #!/bin/bash
               # Install Docker
               sudo yum update -y
-              yum install -y docker
+              yum install -y docker git
               sudo service docker start
               sudo systemctl enable docker
 
