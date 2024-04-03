@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-central-1"
+  region  = "eu-central-1"
   profile = "dfl"
 }
 
@@ -68,6 +68,19 @@ resource "aws_instance" "fridon-instance" {
               # Apply executable permissions to the binary
               sudo chmod +x /usr/local/bin/docker-compose
               docker-compose version
+
+              KEY_PATH="/home/ec2-user/.ssh/id_ed25519"
+              if [ ! -f $KEY_PATH ]; then
+                ssh-keygen -t ed25519 -f $KEY_PATH -N ""
+              fi
+
+              # Output public key to allow user to add it to Git service manually
+              echo "Add the following SSH public key to your Git service"
+              echo "====================================================="
+              cat $KEY_PATH.pub
+              echo "====================================================="
+
+              echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
               EOF
 
   tags = {
