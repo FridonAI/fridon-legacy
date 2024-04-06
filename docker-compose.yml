@@ -11,6 +11,7 @@ services:
       - db
       - redis
     environment:
+      - UPDATE_EMBEDDINGS_ON_BOOTSTRAP=1
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=api_schema
