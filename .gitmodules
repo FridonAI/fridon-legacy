@@ -4,3 +4,6 @@
 [submodule "backend"]
 	path = backend
 	url = git@github.com:FridonAI/backend.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:Fridonai/frontend.git
