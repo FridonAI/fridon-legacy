@@ -19,7 +19,7 @@ Fridon can process and execute a wide range of blockchain operations by extracti
 - **Swapping**: Convert one coin to another using Jupiter.
 - **Lending and Borrowing**: Supply, borrow, withdraw, or repay on Kamino.
 - **Transfers**: Send coins from your wallet to another, with domain support.
-- **Balance Inquiries**: Check balances in your wallet and on Kamino.
+- **Balance Inquiries**: Check balances in your wallet, on Kamino, and Symmetry
 - **Airdrop Points**: Retrieve airdrop points from platforms like Kamino, Symmetry, and Drift.
 - **Symmetry Baskets**: Access detailed information on Symmetry baskets.
 
