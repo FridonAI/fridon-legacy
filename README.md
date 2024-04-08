@@ -1,4 +1,4 @@
-# Fridon: Your Blockchain Customer Agent
+# Fridon: Your Blockchain Agent
 
 Fridon is an innovative blockchain customer agent that leverages natural language understanding to assist users with various commands or questions related to blockchain, social media interactions, and cryptocurrency analytics.
 
@@ -35,7 +35,5 @@ Fridon offers sophisticated social media data parsing capabilities from specifie
 Fridon shines with its ability to analyze cryptocurrency price charts and find similarities in price movements or project descriptions using advanced AI models.
 
 - **Chart Analysis**: Descriptive analysis of a coin's price chart.
-- **Price-Chart Similarity**: Find coins with similar price movement patterns within a specified timeframe.
+- **Price-Chart Similarity**: Find coins with similar price movement patterns within a specified timeframe. 30 days are supported currently.
 - **Project Description Similarity**: Discover coins with similar project descriptions.
-
-
