@@ -30,8 +30,6 @@ Fridon offers sophisticated social media data parsing capabilities from specifie
 - **Media Management**: Follow or unfollow supported social media channels.
 - **Query Support**: Answer questions based on the user's followed media, considering specified time ranges.
 
-There is no need to connect your discord. Fridon follows social medias by himself and by following you just subscribe to Fridon to give news about the project when asked. 
-
 ### Cryptocurrency Price/Project Analytics
 
 Fridon shines with its ability to analyze cryptocurrency price charts and find similarities in price movements or project descriptions using advanced AI models.
@@ -39,8 +37,6 @@ Fridon shines with its ability to analyze cryptocurrency price charts and find s
 - **Chart Analysis**: Descriptive analysis of a coin's price chart.
 - **Price-Chart Similarity**: Find coins with similar price movement patterns within a specified timeframe. 30 days are supported currently.
 - **Project Description Similarity**: Discover coins with similar project descriptions.
-
-Currently we support top 100 solana coins + 50 coins from other chains.
 
 ### Architecture
 

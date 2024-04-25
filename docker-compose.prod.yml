@@ -26,8 +26,8 @@ services:
       - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
       - LANGCHAIN_API_KEY=ls__69a4a95103294035bd82ad3aa61566f3
       - LANGCHAIN_PROJECT=fridon-ai
-      - GPT_MODEL=gpt-4-0125-preview
-      - BIRDEYE_API_KEY="9f0fc8d9eb0f42758e36ea3f71bec8d6"
+      - GPT_MODEL=gpt-4-turbo-2024-04-09
+      - BIRDEYE_API_KEY="5a82ed0e9c1848ca8f4f34c9ec649608"
       - PINECONE_API_KEY="2624d610-9ebc-43e6-95f1-81513475a096"
       - LITERAL_API_KEY=lsk_p7ls3zKYZzNdbmIY_ricp1NSoSEVyp-vFGPKevw3X88
       # Todo: delete
