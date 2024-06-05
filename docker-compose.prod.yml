@@ -17,24 +17,8 @@ services:
   core:
     image: ghcr.io/fridonai/core:main
     restart: always
-    environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=core_schema
-      - POSTGRES_DB_URL=postgresql://user:pass@db:5432/app
-      - API_URL=http://api:3000
-      - LANGCHAIN_TRACING_V2=true
-      - LANGCHAIN_ENDPOINT=https://api.smith.langchain.com
-      - LANGCHAIN_PROJECT=fridon-ai
-      - GPT_MODEL=gpt-4-turbo-2024-04-09
-      # Todo: delete
-      - POSTGRES_HOST=db
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=pass
-      - POSTGRES_DB=app
-      - POSTGRES_PORT=5432
     env_file:
-      - .env
+      - ./core/.env
     command: python -u -m app.main
 
   db:
