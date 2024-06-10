@@ -25,9 +25,10 @@ services:
     env_file:
       - ./core/.env
     environment:
+      - POSTGRES_HOST=db
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - DATABASE_URL=postgresql://user:pass@db:5432/app
+      - POSTGRES_DB_URL=postgresql://user:pass@db:5432/app
       - API_URL=http://api:3000
     command: python -u -m app.main
 
