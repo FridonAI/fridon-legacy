@@ -7,7 +7,7 @@ services:
       options:
         awslogs-region: "eu-central-1"
         awslogs-group: "/aws/fridon/backend"
-        tag: "{{.ImageName}}-{{.Name}}-{{.ID}}"
+        tag: "{{.ID}}"
     restart: always
     ports:
       - "80:3000"
@@ -29,7 +29,7 @@ services:
       options:
         awslogs-region: "eu-central-1"
         awslogs-group: "/aws/fridon/core"
-        tag: "{{.ImageName}}-{{.Name}}-{{.ID}}"
+        tag: "{{.ID}}"
     env_file:
       - ./core/.env
     command: python -u -m app.main
