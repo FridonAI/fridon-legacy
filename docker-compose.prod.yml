@@ -2,6 +2,12 @@ version: "3.8"
 services:
   api:
     image: ghcr.io/fridonai/api:main
+    logging:
+      driver: "awslogs"
+      options:
+        awslogs-region: "eu-central-1"
+        awslogs-group: "/aws/fridon/backend"
+        tag: "{{.ImageName}}-{{.Name}}-{{.ID}}"
     restart: always
     ports:
       - "80:3000"
@@ -11,12 +17,19 @@ services:
       - DATABASE_URL=postgresql://user:pass@db:5432/app?schema=api_schema
       - UPDATE_EMBEDDINGS_ON_BOOTSTRAP=1
       - ENABLE_UPDATE_EMBEDDINGS_CRON=1
+      - NO_COLOR=1
     env_file:
       - .env
 
   core:
     image: ghcr.io/fridonai/core:main
     restart: always
+    logging:
+      driver: "awslogs"
+      options:
+        awslogs-region: "eu-central-1"
+        awslogs-group: "/aws/fridon/core"
+        tag: "{{.ImageName}}-{{.Name}}-{{.ID}}"
     env_file:
       - ./core/.env
     command: python -u -m app.main
